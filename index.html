@@ -1,0 +1,693 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>류다희 | 함께 일하고 스스로 성장하는 개발자</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2225670d-dc9c-434d-bba1-57341cd0fd66" class="page sans"><header><h1 class="page-title">류다희 | 함께 일하고 스스로 성장하는 개발자</h1><p class="page-description"></p></header><div class="page-body"><div id="4ed74045-60ce-44dd-be67-2fd8839ff716" class="column-list"><div id="0668eb86-66b6-4403-93c5-270071cb86b8" style="width:12.5%" class="column"><p id="f4f3f655-7dba-4563-9d94-b1c1c834c677" class="">
+</p></div><div id="3db6dadb-31f5-4fe6-bc52-660d3dbbcdbc" style="width:24.34210526315789%" class="column"><figure id="89df75b4-4fde-400d-80de-35f1a3ca22af" class="image"><a href="%E1%84%85%E1%85%B2%E1%84%83%E1%85%A1%E1%84%92%E1%85%B4%20%E1%84%92%E1%85%A1%E1%86%B7%E1%84%81%E1%85%A6%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A1%E1%84%80%E1%85%A9%20%E1%84%89%E1%85%B3%E1%84%89%E1%85%B3%E1%84%85%E1%85%A9%20%E1%84%89%E1%85%A5%E1%86%BC%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A1%202225670ddc9c434dbba157341cd0fd66/Untitled.png"><img style="width:192px" src="%E1%84%85%E1%85%B2%E1%84%83%E1%85%A1%E1%84%92%E1%85%B4%20%E1%84%92%E1%85%A1%E1%86%B7%E1%84%81%E1%85%A6%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A1%E1%84%80%E1%85%A9%20%E1%84%89%E1%85%B3%E1%84%89%E1%85%B3%E1%84%85%E1%85%A9%20%E1%84%89%E1%85%A5%E1%86%BC%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A1%202225670ddc9c434dbba157341cd0fd66/Untitled.png"/></a></figure></div><div id="f4472fc8-e3ed-42f9-9ef0-120bb24f7e8c" style="width:63.15789473684211%" class="column"><p id="a26072d8-bc79-4d69-9b1c-aed15819f768" class="">
+</p><ul id="9a2d1124-a685-4332-abfb-867ece8f0096" class="bulleted-list"><li style="list-style-type:disc">Email: hac.rdh96@gmail.com</li></ul><ul id="815d7baf-3233-4de0-b448-21c278bfaca9" class="bulleted-list"><li style="list-style-type:disc">GitHub: <a href="https://github.com/semihumanbeing">https://github.com/semihumanbeing</a></li></ul><p id="c5f28462-0d47-466c-bdd6-ee607b33f2d8" class="">
+</p></div></div><h2 id="955b4e85-b6f8-4b61-af3b-34c486cf90d4" class="block-color-teal_background"> 소개</h2><p id="ef499306-6411-46ee-9d16-905d8547f35b" class="">2년차 백엔드 / 서버 개발자 류다희 입니다. </p><p id="0d9082e1-7012-48ee-a9d1-879a5f2a8a86" class="">Java, Spring Boot로 다양한 프로젝트에서 개발 / 배포 / 운영 경험이 있습니다.  </p><h3 id="f0069461-500b-42a5-ac8d-d33caef90480" class="">비효율적인 부분을 찾아 개선하려고 노력합니다. </h3><p id="d9ddac17-acee-4dfc-a9d1-35d4b6a04682" class="">AI 데이터 수집을 위해 하루에 200개의 물건을 구매하는 업무를 배정받았을 때 <br/>이를 자동화 하는 프로그램을 개발하여 인건비를 80% 절약한 경험이 있습니다.<br/></p><h3 id="bbd027a3-3c78-4813-9c83-1058a96dea03" class="">더욱 기술적으로 성장하고 싶은 욕심이 있습니다. </h3><p id="8c70fbc4-6edd-4be6-b0d0-09e47160cbe9" class="">실제로 필요한 것을 만들고 일하며 배우는 것이 제일 많다고 생각하며 <br/>배운 내용이 있으면 작은 POC 나 사이드 프로젝트를 진행해 회사와 팀에 기여합니다. <br/>비슷한 기술 스택을 사용하는 프로젝트를 통해 새로운 프로젝트에 투입되더라도 <br/>효율적으로 기술을 습득하고 빠르게 개발할 수 있게 되었습니다.<br/></p><p id="e32242a2-27a5-4f2f-a1be-2666d3e5bdfd" class="">
+</p><h2 id="d42933e6-93e5-4680-b8f2-7bb4e8b73c11" class="block-color-teal_background"> 스택</h2><ul id="ec0f887e-c265-40dc-8b17-0bca6cad4771" class="bulleted-list"><li style="list-style-type:disc"><strong>Backend</strong>: Java, Spring Boot</li></ul><ul id="18c5ecd8-fd7c-45ae-8947-5da4fd384aac" class="bulleted-list"><li style="list-style-type:disc"><strong>Server</strong>: AWS (EC2, RDS), Ubuntu, Nginx, Shell</li></ul><ul id="b7b24e01-85fe-4753-97eb-3444ce7c7d12" class="bulleted-list"><li style="list-style-type:disc"><strong>Database/ORM</strong>: Mariadb, Mysql, Redis, JPA, MyBatis</li></ul><ul id="b3ec4f3f-305b-45b2-99d4-69cd8bf146e3" class="bulleted-list"><li style="list-style-type:disc"><strong>Frontend</strong>: JSP, Javascript, HTML/CSS</li></ul><p id="fe28e6c1-9ec4-469e-9490-d1fb537727be" class="">
+</p><h2 id="639f484a-0b3d-49c1-afb3-4ed0d1a2fca8" class="block-color-teal_background"> 경력 </h2><h3 id="e276bd4b-56e1-4c6b-9493-1154dc8ad481" class="">CUBOX</h3><p id="71c609d9-726d-4fcd-b3f2-4d4e9f48363d" class="">코스닥 상장 AI 얼굴인식 출입통제 솔루션 기업</p><div id="d193e162-184f-4c3e-9ea5-2c7b2c7422df" class="column-list"><div id="79fca692-59dd-4c2f-a66f-55495c5b90eb" style="width:37.5%" class="column"><p id="376e669b-0845-48e8-9907-25f47b644b8b" class="">Backend Engineer</p><p id="95a38ec5-6218-4d3d-a4b4-799858f1d7e3" class=""><mark class="highlight-gray">2022.08 - 재직 중</mark></p><p id="a1ec69c7-463f-4922-8159-176746e402f5" class="">
+</p></div><div id="1ff4efca-77e4-430b-a3d1-f3b8ec89a00a" style="width:62.5%" class="column"><ul id="038a1971-3785-444f-a9c1-fbf0ca25c012" class="bulleted-list"><li style="list-style-type:disc"><strong>사내 얼굴인식 솔루션 API 게이트웨이 개발</strong><ul id="57ff80c9-d002-430a-a7c6-3ff92d1571a0" class="bulleted-list"><li style="list-style-type:circle">기존 닷넷 API에 자바 버전 API 게이트웨이 개발</li></ul><ul id="94df95a5-151b-4e56-b57e-0ee2fc2cedd2" class="bulleted-list"><li style="list-style-type:circle">Java 20, Spring boot 3.2 버전으로 마이그레이션</li></ul></li></ul><p id="e6769c10-0615-4d6d-baba-35266ccc2a55" class="">
+</p><ul id="207f4227-5635-4bda-a0e1-399bf39b8889" class="bulleted-list"><li style="list-style-type:disc"><strong>정부기관 신원조회 시스템 백엔드 개발</strong><ul id="80df218a-3905-4413-bbde-54f043d0be61" class="bulleted-list"><li style="list-style-type:circle">기획자, 프론트엔드 개발자와 협업하며 <br/>DB, 인터페이스 개발, 배포, 하자보수, 문서화 작업 등<br/>전체 백엔드 개발 작업을 혼자 진행<br/></li></ul><ul id="95772337-ca27-45c4-8da9-75146179e8a4" class="bulleted-list"><li style="list-style-type:circle">최소 A4용지 10장 분량의 XML 응답을 분석하여 DB 설계, <br/>XML 매핑 라이브러리와 람다를 사용해 <br/>가독성이 좋고 유지보수가 용이한 코드 작성<br/></li></ul><ul id="9988eb57-9caa-418a-9361-e48576d377c4" class="bulleted-list"><li style="list-style-type:circle">기존 1000명 조회시 30분 이상 걸리던 시스템을 <br/>전부 재개발하여 4초로 단축<br/></li></ul><ul id="00bce1a7-87eb-4f67-810c-40443b121dc7" class="bulleted-list"><li style="list-style-type:circle">프로젝트 기간 내 완수 및 좋은 평가를 받아 <br/>기관/회사 간 추가사업 확정에 기여<br/></li></ul></li></ul><p id="0dc28ba0-91bd-4e4c-a9fd-11ebd059fbb4" class="">
+</p><ul id="c6de128b-09ab-44f6-bdd3-1a030c6b5370" class="bulleted-list"><li style="list-style-type:disc"><strong>국토부 프로젝트 엑스레이 기기 모니터링 서버 <br/>/ 백오피스 서버 개발<br/></strong><ul id="12684c13-5ae1-4a5d-b55f-f943f1c5e068" class="bulleted-list"><li style="list-style-type:circle">Spring Integration TCP Socket과 Redis 를 사용한 <br/>실시간 기기 모니터링 서버 개발 <br/></li></ul><ul id="489048da-ee8f-4859-892a-dfbb347c7de1" class="bulleted-list"><li style="list-style-type:circle">프론트엔드 개발자와 협업하여 RESTful API 서버 개발</li></ul><ul id="485fa018-78fb-450b-a14d-7269e6447a5d" class="bulleted-list"><li style="list-style-type:circle">AWS EC2, Oracle Cloud, 온프레미스 우분투 서버에 배포</li></ul><ul id="09468935-8f12-4b0e-874f-051e009232c2" class="bulleted-list"><li style="list-style-type:circle">DB를 5초마다 체크하던 기존 엑스레이 기기 헬스체크 기능을 <br/>Redis를 사용하여 부하를 줄이도록 개선<br/></li></ul></li></ul><p id="cae6eee0-3c2c-48dc-85da-10cf4a30b855" class="">
+</p><ul id="511c461a-5ca5-487c-8110-247fa0da0a92" class="bulleted-list"><li style="list-style-type:disc"><strong>프로젝트 유지보수</strong><ul id="6cc8733a-3f1a-4c6e-8462-bac63e5cbbd5" class="bulleted-list"><li style="list-style-type:circle">재택근무 감시 프로그램 관리서버 백엔드 개발<ul id="320bbb6f-6580-4872-b880-1e47afe73739" class="bulleted-list"><li style="list-style-type:square">redis를 사용한 업데이트 여부 조회 API 개발</li></ul><ul id="c7c92b2c-1bd3-4781-8309-735295cf0706" class="bulleted-list"><li style="list-style-type:square">관리서버 JSP 프로젝트 유지보수</li></ul></li></ul><ul id="70299d43-d05a-48a0-82b0-fa52a0b4f5e0" class="bulleted-list"><li style="list-style-type:circle">사내 얼굴인식 솔루션 금융권 유지보수 지원<ul id="0f55775d-482f-4924-a6f1-e520820e5e0b" class="bulleted-list"><li style="list-style-type:square">인증 10회 이상 실패 시 당일 로그인 제한 기능 개발</li></ul></li></ul><ul id="8abe32fc-944d-40ff-9101-4f131196e413" class="bulleted-list"><li style="list-style-type:circle">국가정보자원관리원 출입통제 관리서버 유지보수 지원<ul id="69ac04df-1023-475e-963a-661c4c4b9ec7" class="bulleted-list"><li style="list-style-type:square">JSP 프로젝트 관련 이슈 해결</li></ul></li></ul></li></ul></div></div><h2 id="4cbf3f3f-b2ce-499d-9285-d0f5ee81092f" class="block-color-teal_background"> 사이드 프로젝트</h2><h3 id="282196ec-58d2-4e79-bbd9-33fbc917a3ae" class="">Youtube Share</h3><figure id="75e0a08d-9332-4643-870f-31d9c5e4d75a" class="image"><a href="%E1%84%85%E1%85%B2%E1%84%83%E1%85%A1%E1%84%92%E1%85%B4%20%E1%84%92%E1%85%A1%E1%86%B7%E1%84%81%E1%85%A6%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A1%E1%84%80%E1%85%A9%20%E1%84%89%E1%85%B3%E1%84%89%E1%85%B3%E1%84%85%E1%85%A9%20%E1%84%89%E1%85%A5%E1%86%BC%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A1%202225670ddc9c434dbba157341cd0fd66/Untitled%201.png"><img style="width:576px" src="%E1%84%85%E1%85%B2%E1%84%83%E1%85%A1%E1%84%92%E1%85%B4%20%E1%84%92%E1%85%A1%E1%86%B7%E1%84%81%E1%85%A6%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A1%E1%84%80%E1%85%A9%20%E1%84%89%E1%85%B3%E1%84%89%E1%85%B3%E1%84%85%E1%85%A9%20%E1%84%89%E1%85%A5%E1%86%BC%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A1%202225670ddc9c434dbba157341cd0fd66/Untitled%201.png"/></a></figure><p id="15a70c54-bad7-4dc6-982e-8f0d9df40281" class="">음악을 좋아하는 친구들과 종종 유투브 뮤직비디오나 음악을 함께 들으며 채팅하는 취미가 있음<br/>이를 웹사이트에서 한 번에 할 수 있는 서비스를 2달간 1인 개발, 현재 실제 운영중<br/></p><p id="0c088dd9-e297-4996-a51c-4bb9055f88c7" class="">사이트 주소: <a href="http://youtube-share.kro.kr/">http://youtube-share.kro.kr/</a></p><p id="2bdaae9f-bcd6-4293-9123-9afb0d5435c0" class="">WEB: <a href="https://github.com/semihumanbeing/youtube-share">https://github.com/semihumanbeing/youtube-share</a></p><p id="1135c840-c853-4c84-9e94-8fc4e466aff9" class="">API: <a href="https://github.com/semihumanbeing/Youtube-Share-API">https://github.com/semihumanbeing/Youtube-Share-API</a></p><h3 id="1ce5a40a-bed5-4e80-b58d-208c5931aaea" class="">사용 기술</h3><p id="2f737e5f-5955-4018-816f-6b6d7d98cfe5" class="">Frontend: React.js, Typescript</p><p id="6dd5ed04-f14b-4093-b463-a51b11896766" class="">Backend: Java 17, SpringBoot 3.2, Websocket, Redis, JPA, QueryDsl, MariaDB</p><p id="a2c19f36-9e3c-4e4f-b004-dfb3eb8c539d" class="">Server: Google Cloud Platform, Nginx</p><ul id="4ef95112-0b66-4a4a-9e91-6957d2ba19e3" class="bulleted-list"><li style="list-style-type:disc">비용 절감을 위해 클라우드 서버를 비교하여 결정</li></ul><ul id="ea768ac5-7c66-4e39-9139-abb4209cf34c" class="bulleted-list"><li style="list-style-type:disc">Websocket, Redis, JWT, Spring security 등 업무하며 사용해 본 백엔드 기술 사용하여 빠르게 개발</li></ul><ul id="f5b3bdf4-aa03-4e1b-b107-495e209ec945" class="bulleted-list"><li style="list-style-type:disc">CI/CD 를 위해 git pull 한 뒤 프로필 적용하여 배포하는 쉘 스크립트를 작성해 크론탭에 적용 </li></ul><ul id="5172d434-5146-4ef8-af6c-1999f26593f3" class="bulleted-list"><li style="list-style-type:disc">회사에서는 사용하지 않던 SSE, QueryDSL을 공부하고 적용 </li></ul><ul id="f35ddf82-75e6-49f5-b58c-d523de2b99e0" class="bulleted-list"><li style="list-style-type:disc">프론트엔드 개발은 처음이라 리액트 강의와 책을 따라하고 자바스크립트 도서 전체를 필사하여 적용</li></ul><h3 id="bd65d67d-91d9-4e9b-88f5-aeec8c798ae6" class="">문제해결</h3><ul id="763e9fcc-a9b9-47e2-840c-532fccd16cb1" class="bulleted-list"><li style="list-style-type:disc">채팅, 유투브 비디오 재생, 플레이리스트 동기화 모두에 웹소켓을 사용하다보니 속도 저하로 오작동하는 이슈를 해결하기 위해 HTTP polling, SSE, Long polling 등의 통신 방법을 조사하고 비교하였고 플레이리스트 표시부분을 SSE 를 통해 HTTP 통신으로 돌려 최적화.</li></ul><ul id="369f947c-461b-4f1c-992f-884871fdd4d7" class="bulleted-list"><li style="list-style-type:disc">플레이리스트의 잦은 조회로 인한 DB 부담을 덜기 위해 Redis를 사용하여 빠르게 내용을 불러올 수 있도록 하였고, Redis의 Queue 를 사용하여 순서대로 곡을 추출하여 재생할 수 있는 구조 설계</li></ul><p id="341d6792-bd88-4c1e-9952-81178238e513" class="">
+</p><hr id="fa797f99-b859-4c6e-9587-2d285f225f40"/><h3 id="049b4845-89d5-4121-a863-7885c40a28b3" class="">Work In And Out</h3><figure id="1c53f3ff-a939-41fb-81df-2c4376ecd1f8" class="image"><a href="%E1%84%85%E1%85%B2%E1%84%83%E1%85%A1%E1%84%92%E1%85%B4%20%E1%84%92%E1%85%A1%E1%86%B7%E1%84%81%E1%85%A6%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A1%E1%84%80%E1%85%A9%20%E1%84%89%E1%85%B3%E1%84%89%E1%85%B3%E1%84%85%E1%85%A9%20%E1%84%89%E1%85%A5%E1%86%BC%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A1%202225670ddc9c434dbba157341cd0fd66/Untitled%202.png"><img style="width:192px" src="%E1%84%85%E1%85%B2%E1%84%83%E1%85%A1%E1%84%92%E1%85%B4%20%E1%84%92%E1%85%A1%E1%86%B7%E1%84%81%E1%85%A6%20%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A1%E1%84%80%E1%85%A9%20%E1%84%89%E1%85%B3%E1%84%89%E1%85%B3%E1%84%85%E1%85%A9%20%E1%84%89%E1%85%A5%E1%86%BC%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%8C%E1%85%A1%202225670ddc9c434dbba157341cd0fd66/Untitled%202.png"/></a></figure><p id="a0978f4b-67b3-4676-bf8c-a1d45e5a2198" class="">외근 시 회사 인사관리 사이트의 출퇴근 버튼을 웹페이지에서만 누를 수 있는 것이 불편하여 인사관리 사이트에 접속해 출퇴근 버튼을 원격으로 눌러주는 안드로이드 어플리케이션 (출퇴근 방식 변경으로 개발 중단)</p><h3 id="09152f43-2be4-4596-a836-b36bacaf5ed7" class="">사용 기술 </h3><p id="a679472e-ee28-48c6-b6a1-4cb19e0ab62b" class="">Application: Kotlin Multiplatform Mobile</p><p id="a254c7d6-52ed-4ae1-99bd-e73084f60cc3" class="">Backend: Java 11, SpringBoot 2.7, Selenium, MariaDB</p><ul id="529d1239-b627-4b12-acf5-b6cbb90a1527" class="bulleted-list"><li style="list-style-type:disc">Retrofit 으로 자바 서버와 통신하는 안드로이드 앱 개발</li></ul><ul id="99c248d9-93a4-42d6-b548-d22ffd48c2f1" class="bulleted-list"><li style="list-style-type:disc">스프링부트 서버에서 셀레니움으로 출퇴근 버튼을 눌러주는 기능</li></ul><ul id="f9b70871-309f-41dc-82cd-23fcdad71193" class="bulleted-list"><li style="list-style-type:disc">출퇴근 성공 시 중복으로 출퇴근 버튼을 누를 수 없도록 비활성화하고 매일 0시 초기화</li></ul><h3 id="cd7aa024-f7aa-47ef-be33-99ab7337f06a" class="">문제해결</h3><ul id="f53766b4-5307-4408-891f-bf39add8f387" class="bulleted-list"><li style="list-style-type:disc">인사관리 사이트의 랜덤으로 등장하는 팝업 때문에 예외처리에 어려움이 있었음. 자바 서버가 윈도우에서 브라우저 표시를 해야 팝업을 제대로 닫고 진행하는 것을 확인하여 윈도우 서버에서 개발진행</li></ul><ul id="9114e5ef-79db-45ed-8bda-a575a9193878" class="bulleted-list"><li style="list-style-type:disc">출근버튼을 원격으로 누르는 행위에 많은 변수가 있었고 처리에 10초 까지 걸릴 수 있어 어플리케이션 화면에서는 버튼 클릭시 우선 비활성화 한 뒤 코루틴으로 응답을 받았을 때 비동기적으로 실제 처리상황을 알림처리</li></ul><p id="a8034368-ed9b-4b89-8bb9-3d95023d9d02" class="">
+</p><p id="299d3f4a-c7ba-4307-bde3-7a461c0c7cb2" class="">
+</p><hr id="1574473c-8fae-47d7-bc3b-36215bac61f6"/><h3 id="138693e2-750e-484c-a6d7-fca6498528ee" class=""><strong>다이소 제품구매 및 엑셀 보고서 자동화</strong></h3><h3 id="fab97e18-a9ed-4831-a8d4-e2500ea116f3" class="">사용 기술</h3><p id="2957a222-4db3-4712-a9ee-fa1929be19e0" class="">Java 8, Selenium, POI</p><ul id="9938fbe9-6aa8-4c71-b596-ae4c7c9f7404" class="bulleted-list"><li style="list-style-type:disc">입사 후 처음으로 배정된 업무: AI 데이터 수집을 위해 매일 200개의 제품을 장바구니에 넣고, 중복 구매 여부를 확인하고, 구매목록의 보고서를 엑셀로 작성하는 일</li></ul><ul id="9110bd18-0f6f-42ed-872a-7c6de4614dda" class="bulleted-list"><li style="list-style-type:disc">하루에 200개를 담아야 하는데 업무를 직접 해보니 이틀을 집중해서 해야 200개를 달성 가능. </li></ul><ul id="3fbde026-1858-48c8-8b37-45660f32c28a" class="bulleted-list"><li style="list-style-type:disc">셀레니움, 엑셀 라이브러리를 사용한 자바 CLI 프로그램을 하루동안 개발하여 이틀이 걸리던 작업을 30분으로 단축, 5명이 필요한 업무를 1명이 초과달성 가능해져 인건비를 80% 절감</li></ul><ul id="4ce3604c-e3b8-4abb-9d03-ec2a7e9b6bfb" class="bulleted-list"><li style="list-style-type:disc">능력을 회사내에서 인정받는 계기가 되어, 이후 주력 솔루션 개발팀으로 부서이동</li></ul><p id="d752e84e-cf75-4bf1-9e37-f43218f94309" class="">
+</p><p id="3ed2cded-91f1-4a81-95cc-ccfb0279f1b8" class="">
+</p><h2 id="ca2919fb-fac1-41fe-9047-6c9ba0932d7d" class="block-color-teal_background"> 학력 및 기타 경력</h2><div id="34ccecc9-7b50-4039-aa06-0d28f287fa12" class="column-list"><div id="faad27e7-5d02-4070-a84a-5fd6cf9e9f04" style="width:50%" class="column"><h3 id="792f21ff-bc6f-457e-b501-3d6a240c516f" class="">한국방송통신대학교</h3></div><div id="d15de04d-3fad-4aba-9804-2e8c34ad0fff" style="width:50%" class="column"><h3 id="325fe09a-190c-4077-a5aa-bf7dbf62992c" class="">한국ICT인재개발원</h3></div></div><div id="14962458-ea43-4fbb-8093-37b8ceff66e0" class="column-list"><div id="bf95c811-ce17-41d8-b357-829ba61871ea" style="width:50%" class="column"><p id="a92e4ddd-671e-42e0-b6bc-99085f79689c" class="">컴퓨터과학과 학사</p><p id="dbb4f136-643a-45e9-88c9-3358e635a7de" class=""><mark class="highlight-gray">2023.02 - 재학중</mark></p></div><div id="5c130175-691f-422b-be9d-76b6d056d634" style="width:50%" class="column"><p id="78c36cfc-f7f1-409d-aa77-bad966a86e91" class="">데이터융합을 활용한 자바개발자 양성과정 </p><p id="9b4494b6-e7c9-48b5-8824-3f33a34cec97" class=""><mark class="highlight-gray">2022.02 - 2022.08 (수료)</mark></p></div></div><hr id="f56fec16-73b5-49ff-87a2-10d47bf9799c"/><div id="60bfc608-7420-45f3-9c08-46a686904ad6" class="column-list"><div id="d58d03f9-b560-4798-9b31-7438bbfd4e5c" style="width:33.33333333333334%" class="column"><h3 id="b0e10622-c2fe-472b-b48a-23be27ed0ea8" class="">아시아 그린투어</h3></div><div id="bf469727-2d9c-4885-9412-880d75122957" style="width:33.333333333333336%" class="column"><h3 id="f1684711-3242-408e-b3c1-d35e061601b9" class=""><strong>서울호서예술전문학교</strong></h3></div><div id="d96b61cc-1563-4302-af2d-1eec8949d485" style="width:33.33333333333333%" class="column"><h3 id="2aca05e0-f9de-497f-82ef-7d95755a3347" class="">서울외국어고등학교</h3></div></div><div id="c6a26327-89e3-4af9-9619-b28e5e44e519" class="column-list"><div id="5ff118ec-f8c3-44c2-b056-221c8b99494f" style="width:33.33333333333333%" class="column"><p id="589ef0c9-8368-401a-8fac-2a3bd9218ebe" class="">하나투어 베트남 현지 랜드사에서 영어로 오퍼레이터 업무<br/>성수기 월 2000명 모객을 루틴을 활용해 실수없이 처리하여 <br/>하나투어 전세계 랜드사 중 고객만족도 1위 달성<br/>코로나로 폐업하여 귀국<br/></p><p id="a2fad1d3-d300-45b1-a559-1769ed26b762" class=""><mark class="highlight-gray">2017.05 - 2020.10</mark></p></div><div id="6033a67e-322d-4d8a-aa71-da758f42d6c9" style="width:33.33333333333334%" class="column"><p id="8330c78d-8536-4f43-9d95-d687684f44dc" class="">대학교(전문학사) | 음향미디어</p><p id="8bbac547-a96c-4e2b-b42e-a796ac33c071" class=""><mark class="highlight-gray">2015.03. - 2017.02. (졸업)</mark></p><p id="e5d16711-d066-4def-b1b8-308ef984682f" class="">
+</p></div><div id="49db7030-def5-410f-909c-d4414b2213e7" style="width:33.33333333333333%" class="column"><p id="8472c4b8-eb69-49af-af70-348f1d59f30b" class="">독일어과</p><p id="7d2f5f69-6f7b-4d96-b868-fc945ce6144e" class=""><mark class="highlight-gray">2012.03. - 2015.02. (졸업)</mark></p><p id="480c1af8-8306-4acd-8fbf-9129d13ef4fb" class="">
+</p></div></div><h3 id="bd992b59-3f34-4d53-8991-71c550d53b2b" class=""><strong><br/><br/></strong><br/>	<br/><br/></h3><p id="fed7c417-1d3a-4396-bc42-edd7129ffab3" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
